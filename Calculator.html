@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <script>
+    var item1="rice"; var item2="sugar"; var item3= "wheat";
+        var riceprice=50;
+        var sugarprice=20;
+        var wheatprice=40;
+     var riceqnty=2;
+     var sugarqnty=1;
+     var wheatqnty=4;    
+        var ricetotal= riceprice * riceqnty;
+        var sugartotal= sugarprice * sugarqnty;
+        var wheattotal= wheatprice * wheatqnty;
+    console.log( "cost of"+item1+": $"+ ricetotal);
+    console.log( "cost of"+item2+": $"+ sugartotal)
+    console.log( "cost of"+item3+": $"+ wheattotal);
+    var totalcost=(sugartotal+ricetotal+wheattotal);
+    console.log("Total bill: $" +totalcost);
+    var sugarprice=40;
+    var newsugartotal=sugarprice*sugarqnty;
+    console.log("new sugar cost: $ "+sugartotal);
+    var updatedcost=(ricetotal+newsugartotal+wheattotal);
+    console.log("Updated bill is: $"+updatedcost);
+
+
+
+
+    </script>
+    
+</body>
+</html>

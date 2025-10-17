@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small online store</title>
+</head>
+<body>
+    <p id="price"></p>
+    <p id="newprice"></p>
+    <script>
+ var tshirt=5;
+ var caps=3;
+ var tshirtprice=400;
+ var capprice=150;
+ var total=(tshirt * tshirtprice) + (caps * capprice);
+ document.getElementById("price").innerHTML="Total price is:"+ total;
+tshirtprice=450;
+var newtotal=(tshirt*tshirtprice)+(caps*capprice);
+document.getElementById("newprice").innerHTML="New price is :" + newtotal;
+</script>
+
+</body>
+</html>
