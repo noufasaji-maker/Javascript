@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Library System</title>
+</head>
+<body>
+    <script>
+        var book ={
+            Title:"'The Alchemist'",
+            Author:"Paulo Coelho",
+            Year:1988,
+            getSummery: function(){
+                return "The book " +this.Title+" was written by "+ this.Author+" in "+this.Year+".";
+            }
+        };
+        console.log("Book Object Details:");
+        console.log("title: "+book.Title);
+        console.log("author: "+book.Author);
+        console.log("year: "+book.Year);
+function printBookSummery(bookobj){
+    console.log("book summery:");
+    console.log(bookobj.getSummery());
+}
+
+printBookSummery(book);
+    </script>
+    
+</body>
+</html>
