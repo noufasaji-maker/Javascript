@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+</head>
+<body>
+    <script>
+     var FeedBack=  "      I loved the FOOD and the service!      ";
+   console.log("FeedBack:", FeedBack);
+
+   FeedBack=FeedBack.trim();
+
+   FeedBack=FeedBack.toLowerCase();
+
+   FeedBack=FeedBack.replace("food","ambience");
+
+   var position=FeedBack.indexOf("services");
+   var wordsarray=FeedBack.split(" ");
+
+   console.log("Cleaned FeedBack:",FeedBack)
+   console.log("Position of services:", position);
+   console.log("Array of words:", wordsarray);
+
+    </script>
+</body>
+</html>
