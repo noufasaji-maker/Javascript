@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return page</title>
+</head>
+<body>
+    <button onclick="CheckReturn()">Check Return</button>
+    <script>
+     var order={
+        itemname:"lipstick",
+        isDelivered:true,
+        daysSinceDelivery:7
+     };
+     function CheckReturn(){
+        var hasItemName="itemname" in order;
+        var Returnmessage=(order.isDelivered && order.daysSinceDelivery <=7) ? "Eligible for return" : "Return period expired";
+        
+     
+    console.log("Item Name:",order.itemname);
+    console.log("IsDelivered:",order.isDelivered);
+    console.log("Days Since Delivered:",order.daysSinceDelivery);
+    console.log(Returnmessage);
+    console.log("Item name property exist ? :",hasItemName);
+    
+    delete order.daysSinceDelivery;
+    console.log("After removing daysSinceDelivery property:",order);
+     }
+    </script>
+</body>
+</html>
