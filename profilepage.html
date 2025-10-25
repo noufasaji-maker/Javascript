@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+<body>
+    <button onclick="CheckAccess()">Check Access</button>
+    <script>
+     var User={
+        name:"Riya",
+        age:20,
+        isAdmin:true
+     }
+    function CheckAccess(){
+        var Age="age" in User;
+        console.log("age property exist ? :",Age);
+        var AccessMessage=(User.age>=18 && User.isAdmin) ? "Access Granted" : "Access Denied";
+        
+    
+console.log("User Name:",User.name);
+console.log("User Age:",User.age);
+console.log("User is Admin:",User.isAdmin);
+console.log("Result:",AccessMessage);
+
+delete User.age;
+console.log("After deleting age property:",User);
+    }
+    </script>
+</body>
+</html>
