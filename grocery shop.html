@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Shop</title>
+</head>
+<body>
+    <script>
+   var ProductName=["Rice","Wheat","Sugar","Salt"];
+   var ProductPrice=[58,36,52,20];
+
+   var Products=ProductName.map(function(name, index){
+    return{name:name,price:ProductPrice[index]};
+   });
+   console.log("All products");
+   Products.map(function(Item){
+   console.log("product:",Item.name,"- price:",Item.price);
+   });
+  
+ var costlyproducts=Products.filter(function(Item){
+    return Item.price>50;
+ });
+ console.log("Products price greater than 50:",costlyproducts)
+ Products.push({name:"Watermelon",price:80,});
+ console.log("Updated product list:");
+ Products.map(function(Item){
+    console.log("Products:",Item.name,"- Price:",Item.price)
+ });
+    </script>
+</body>
+</html>
