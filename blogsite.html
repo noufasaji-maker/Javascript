@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Filtering System </title>
+</head>
+<body>
+    <p id="demo"></p>
+    <P id="demo1"></P>
+    <button onclick="myFunction()">Try it</button>
+    <script>
+        function myFunction(){
+     var comment=prompt("Enter yor comment:");
+     var txt=comment.replace(/(bad|ugly|stupid)/gi,"***");
+        alert("Filtered Comment: " + txt);
+    var number =comment.match(/[0-9]+/g);
+    var len=number.length;
+    document.getElementById("demo").innerHTML="Count of numbers"+len;
+    var Letter=comment.match(/\b[A-Z]/g);
+    document.getElementById("demo1").innerHTML="Count of capitalize"+ Letter;
+    }
+    </script>
+</body>
+</html>
