@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON format</title>
+</head>
+<body>
+    <script>
+     let person=JSON.parse('{"name": "Shejina","email":"sheji@gmail.com","message" :"Hai noufa"}');
+    console.log(person);
+    var greeting;
+
+greeting = (val) => "message received from " + val.name;
+console.log(greeting(person));
+try{    console.log(person.age);
+}catch(err){
+    console.log("age property is not found");
+
+}
+
+
+
+
+    </script>
+</body>
+</html>
