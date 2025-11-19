@@ -1,50 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Birthday Tracker</title>
-</head>
-<body>
 
-  <script>
-    var friend = {
-      name: "Michael",
-      birthDate: "2002-10-28" 
-    };
+<!DOCTYPE html> 
+<html> 
+<body> 
+<script> 
+	let add = { 
+		num : 0, 
+		calc : function() { 
 
-    function getBirthdayDetails(friend) {
-      console.log(" FRIEND DETAILS ");
-      console.log("Name:", friend.name);
-      console.log("Birth Date (String):", friend.birthDate);
+		// logs the add object 
+		document.write(this + ' ') 
 
-      var birth = new Date(friend.birthDate);
-      console.log(" DATE OBJECT ");
-      console.log("Converted to Date object:", birth);
+		function innerfunc() { 
+			this.num += 1; 
 
-      var day = birth.getDate();
-      var monthNames = [ "January","February","March","April","May","June",
-        "July","August","September","October","November","December" ];
-      var month = monthNames[birth.getMonth()];
-      var year = birth.getFullYear();
+		// logs the window object 
+		document.write(this + ' '); 
 
-      console.log(" BIRTH DETAILS ");
-      console.log("Year:", year);
-      console.log("Month:", month);
-      console.log("Day:", day);
+		return this.num 
 
-      var today = new Date();
-      var age = today.getFullYear() - birth.getFullYear();
+	} return innerfunc(); 
+	} 
+}; 
 
-      console.log(" AGE CALCULATION ");
-      console.log("Current Year:", today.getFullYear());
-      console.log("Birth Year:", year);
-      console.log("Calculated Age:", age, "years old");
+// logs NaN 
+document.write(add.calc() + '<br>'); 
 
-      var result = friend.name + " was born on " + day + " " + month + ", " + year + " and is " + age + " years old.";
-      console.log(" FINAL RESULT ");
-      console.log(result);
-    }
-
-    getBirthdayDetails(friend);
-  </script>
-</body>
-</html>
+// logs NaN 
+document.write(add.calc()); 
+</script>				 
+</body> 
+</html>							 

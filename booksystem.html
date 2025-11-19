@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Info</title>
+</head>
+<body>
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  <p id="demo3"></p>
+
+  <script>
+    class Book {
+      constructor(title, author, price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+      }
+
+      getBook() {
+        return this.title + " by " + this.author + " costs $" + this.price;
+      }
+
+      getTitle() {
+        return this.title;
+      }
+
+      getAuthor() {
+        return this.author;
+      }
+
+      setPrice(newPrice) {
+        if (typeof newPrice === "number" && newPrice > 0) {
+          this.price = newPrice;
+        } else {
+          return "Invalid Price";
+        }
+      }
+
+      showDetails() {
+        document.getElementById("demo1").innerHTML = "Title: " + this.getTitle();
+        document.getElementById("demo2").innerHTML = "Author: " + this.getAuthor();
+        document.getElementById("demo3").innerHTML = "Price: $" + this.price;
+      }
+    }
+
+    let book1 = new Book("Harry Potter", "J.K.Rowling", 29.99);
+    book1.setPrice(100);
+    document.getElementById("demo").innerHTML = book1.getBook();
+    book1.showDetails();
+  </script>
+</body>
+</html>

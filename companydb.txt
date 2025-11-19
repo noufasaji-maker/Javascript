@@ -1,0 +1,61 @@
+// Create and switch to the database
+use CompanyDB
+
+
+//  Insert one employee record
+db.Employees.insertOne({
+    name: "Ravi Kumar",          // string
+    age: 28,                     // number
+    isActive: true,              // boolean
+    salary: 45000.50,            // number
+    skills: ["JavaScript", "Node.js", "MongoDB"],   // array
+    contact: {                   // object
+        email: "ravi@example.com",
+        phone: "9876543210"
+    },
+    joinedDate: new Date(),      // date
+    managerAssigned: null        // null
+})
+
+
+// Insert three more employee records
+db.Employees.insertMany([
+    {
+        name: "Aarav Sharma",
+        age: 32,
+        isActive: false,
+        salary: 52000,
+        skills: ["Python", "Django", "Data Analysis"],
+        contact: { email: "aarav@example.com", phone: "9123456780" },
+        joinedDate: new Date(),
+        managerAssigned: "Ravi Kumar"
+    },
+    {
+        name: "Neha Singh",
+        age: 26,
+        isActive: true,
+        salary: 40000,
+        skills: ["HTML", "CSS", "JavaScript", "React"],
+        contact: { email: "neha@example.com", phone: "9988776655" },
+        joinedDate: new Date(),
+        managerAssigned: null
+    },
+    {
+        name: "Vikram Rao",
+        age: 29,
+        isActive: true,
+        salary: 60000.75,
+        skills: ["Java", "Spring Boot", "Microservices"],
+        contact: { email: "vikram@example.com", phone: "9090909090" },
+        joinedDate: new Date(),
+        managerAssigned: "Aarav Sharma"
+    }
+])
+
+
+// Show all collections
+show collections
+
+
+// Show all employee records
+db.Employees.find().

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 70px;
+    }
+    .calc-box {
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input, select, button {
+      margin: 8px;
+      padding: 6px;
+    }
+    button {
+      background-color: deepskyblue;
+      border: 1px solid #888;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Simple Calculator</h2>
+
+  <div class="calc-box">
+    <input type="text" id="num1" placeholder="Enter first number"><br>
+    <input type="text" id="num2" placeholder="Enter second number"><br>
+
+    <select id="operator">
+      <option value="+">Addition (+)</option>
+      <option value="-">Subtraction (-)</option>
+      <option value="">Multiplication ()</option>
+      <option value="/">Division (/)</option>
+    </select><br>
+
+    <button onclick="calculate()">=</button>
+
+    <p id="result">Result: </p>
+  </div>
+
+  <script>
+    function add(a, b) {
+      return a + b;
+    }
+
+    function subtract(a, b) {
+      return a - b;
+    }
+
+    function multiply(a, b) {
+      return a * b;
+    }
+
+    function divide(a, b) {
+      if (b === 0) {
+        return "Cannot divide by zero!";
+      } else {
+        return a / b;
+      }
+    }
+
+    function calculate() {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let operator = document.getElementById("operator").value;
+      let result;
+    
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter valid numbers!";
+      } else {
+        switch (operator) {
+          case '+':
+            result = add(num1, num2);
+            break;
+          case '-':
+            result = subtract(num1, num2);
+            break;
+          case '*':
+            result = multiply(num1, num2);
+            break;
+          case '/':
+            result = divide(num1, num2);
+            break;
+          default:
+            result = "Invalid operator selected!";
+        }
+      }
+
+   if (typeof result === "number") {
+      result = result.toFixed(2);
+    }
+
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  </script>
+</body>
+</html>
